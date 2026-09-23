@@ -12,7 +12,7 @@ print(-7 // 2, type(-7 // 2 ))
 print(7 % 3, type(7 % 3))
 #1 int
 print(-7 % 3, type (-7 % 3 ))
-#-1 int
+#2 int
 print(2**10, type(2**10))
 #1024 int
 
@@ -39,8 +39,12 @@ print("-----------------")
 
 # Задача 4 
 
-print(float(0.1+ 0.1+ 0.1))
-print(float(0.1+ 0.1+ 0.1 == 0.3)) and print(f"{0.1 + 0.1 + 0.1:.20f}")
-print(Decimal(0.1 + 0.1 + 0.1 )== Decimal(0.3))
-#Выбрал бы этот способ так как Decimal позволяет вычислить точную десятичную арифметику
-print(int((0.1 + 0.1 + 0.1)/100))
+
+total_float=0.1+ 0.1+ 0.1
+print("float-сумма:", f"{total_float:.20f}",total_float== 0.3)
+total_decim=Decimal("0.1")+ Decimal("0.1")+ Decimal("0.1")
+print("Сравнение Decim",total_decim== Decimal("0.3"))
+price_kopecks=10
+total_kopecks=price_kopecks*3
+print("Копейки,сумма:" , total_kopecks)
+print("Копейки в рублях:", f"{total_kopecks //100}.{total_kopecks% 100:02d}")
