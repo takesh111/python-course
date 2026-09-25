@@ -34,20 +34,21 @@ word = "Привет"
 data = word.encode("utf-8")
 print(len(word), len(data))
 # 6 , 12
+print(data.decode("utf-8"))
 print("hello".encode("utf-8"))
 #"Привет".encode("cp1251").decode("uft-8")
-#Traceback (most recent call last):
 #File "<stdin>", line 1, in <module>
-#"Привет".encode("cp1251").decode("uft-8") 
-# декодировка произошла не в том формате.
+# "Привет".encode("cp1251").decode("utf-8")
+# UnicodeDecodeError: 'utf-8' codec can't decode byte 0xcf in position 0: invalid continuation byte 
+# декодировка произошла не в том формате, битый лог .
 
 # Задача 4
 line = "2026-09-20 12:31:07 ERROR auth failed for user admin from 10.0.0.5"
 stroka = line.split()
-data = stroka[0]
+date = stroka[0]
 time = stroka[1]
 level = stroka[2]
-address = stroka [-1]
-print(f"Уровень: {level} Дата: {data} Время: {time} IP: {address}")
+address = stroka[-1]
+print(f"[{level}] {date} {time} - {address}")
 result = " ".join(stroka)
 print(result)
